@@ -1,27 +1,4 @@
-import { Mail, Linkedin, Twitter, Github } from "lucide-react";
 
-const socialLinks = [
-  {
-    icon: Mail,
-    href: "mailto:bansalshorya13@gmail.com",
-    label: "Email"
-  },
-  {
-    icon: Linkedin,
-    href: "https://www.linkedin.com/in/shorya-bansal-621586312",
-    label: "LinkedIn"
-  },
-  {
-    icon: Twitter,
-    href: "https://x.com/Shorya_codes",
-    label: "Twitter"
-  },
-  {
-    icon: Github,
-    href: "https://github.com/shoryabansalgithub",
-    label: "GitHub"
-  }
-];
 
 export const AboutMe = () => {
   return (

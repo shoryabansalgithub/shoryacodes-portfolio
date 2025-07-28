@@ -3,8 +3,8 @@ import { Mail, Linkedin, Twitter, Github } from "lucide-react";
 const socialLinks = [
   {
     icon: Mail,
-    href: "#about",
-    label: "About Me"
+    href: "mailto:bansalshorya13@gmail.com",
+    label: "Email"
   },
   {
     icon: Linkedin,
