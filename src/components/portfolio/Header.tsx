@@ -1,76 +1,67 @@
-import { motion } from "framer-motion";
 import { Mail, Linkedin, Twitter, Github } from "lucide-react";
 
 const socialLinks = [
   {
     icon: Mail,
-    href: "mailto:shorya@example.com",
-    label: "Email"
+    href: "#about",
+    label: "About Me"
   },
   {
     icon: Linkedin,
-    href: "https://linkedin.com/in/shorya-bansal",
+    href: "https://www.linkedin.com/in/shorya-bansal-621586312",
     label: "LinkedIn"
   },
   {
     icon: Twitter,
-    href: "https://twitter.com/shorya_bansal",
+    href: "https://x.com/Shorya_codes",
     label: "Twitter"
   },
   {
     icon: Github,
-    href: "https://github.com/shorya-bansal",
+    href: "https://github.com/shoryabansalgithub",
     label: "GitHub"
   }
 ];
 
 export const Header = () => {
   return (
-    <header className="min-h-screen flex items-center justify-center px-6">
-      <div className="text-center max-w-2xl">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="mb-8"
-        >
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-light mb-6 tracking-tight">
-            I am Shorya Bansal
-          </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground font-light">
-            Developer by the day, Designer by the night
-          </p>
-        </motion.div>
+    <div className="relative mx-auto w-full max-w-screen-sm flex-1 px-4 pt-8">
+      <div className="max-w-lg w-full">
+        {/* Profile Image */}
+        <div className="mb-6 flex px-4">
+          <img 
+            src="/designs/header.jpg" 
+            alt="Shorya Bansal" 
+            className="w-20 h-20 rounded-full object-cover border-2 border-border"
+          />
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-          className="flex items-center justify-center gap-6"
-        >
-          {socialLinks.map((social, index) => (
-            <motion.a
+        {/* Greeting */}
+        <h1 className="font-display text-2xl md:text-3xl font-bold mb-2 px-4">
+          Hi! 👋
+        </h1>
+        <h2 className="font-display text-lg md:text-xl font-medium mb-2 px-4">
+          I am Shorya 
+        </h2>
+        <h3 className="font-display text-base md:text-lg font-medium mb-6 px-4 text-zinc-600">
+          Developer by the day and Designer by the night
+        </h3>
+        {/* Social Links */}
+        <div className="flex items-center px-4 gap-6">
+          {socialLinks.map((social) => (
+            <a
               key={social.label}
               href={social.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-icon"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ 
-                duration: 0.4, 
-                delay: 0.5 + index * 0.1,
-                ease: "easeOut" 
-              }}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              aria-label={social.label}
+              target={social.href.startsWith('#') ? undefined : "_blank"}
+              rel={social.href.startsWith('#') ? undefined : "noopener noreferrer"}
+              className="text-muted-foreground hover:text-foreground transition-colors duration-300"
             >
-              <social.icon className="w-5 h-5" />
-            </motion.a>
+              <social.icon className="w-4 h-4" />
+              <span className="sr-only">{social.label}</span>
+            </a>
           ))}
-        </motion.div>
+        </div>
       </div>
-    </header>
+    </div>
   );
-};
+}; 

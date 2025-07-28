@@ -1,19 +1,22 @@
-import { motion } from "framer-motion";
+import { Heart } from "lucide-react";
 
 export const Footer = () => {
   return (
-    <footer className="section-padding border-t border-border">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        viewport={{ once: true }}
-        className="text-center"
-      >
-        <p className="text-sm text-muted-foreground">
-          Built by Shorya Bansal — 2025
-        </p>
-      </motion.div>
+    <footer className="relative mx-auto w-full max-w-screen-sm px-4 py-8 pb-16">
+      <div className="max-w-lg w-full">
+        <div className="flex items-center justify-center">
+          <div className="text-center">
+            <p className="text-sm text-muted-foreground flex items-center justify-center gap-2">
+              Made with 
+              <Heart className="w-4 h-4 text-red-500 fill-red-500 animate-pulse" />
+              by Shorya
+            </p>
+            <p className="text-xs text-muted-foreground/60 mt-1">
+              © 2025 All rights reserved
+            </p>
+          </div>
+        </div>
+      </div>
     </footer>
   );
-};
+}; 
