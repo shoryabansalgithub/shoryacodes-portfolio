@@ -19,7 +19,7 @@ export const LandingPages = () => {
       id: 2,
       title: "Luxury Vision - Destination Planner",
       description: "Hero section for a luxury destination planning service with elegant design",
-      image: "/designs/luxury.png", // Using actual Luxury Vision project image
+      image: "/luxury.png", // Using actual Luxury Vision project image
       liveUrl: "https://luxury-vision-intro.vercel.app/",
       githubUrl: null,
       tech: ["React", "Tailwind CSS", "Framer Motion"],
